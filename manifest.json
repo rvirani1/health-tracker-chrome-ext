@@ -1,0 +1,13 @@
+{
+  "manifest_version" : 2,
+  "name" : "Health Tracker",
+  "description" : "Allows Riaz to Track What He Puts in his Mouth",
+  "version" : "1.0",
+
+  "browser_action" :{
+    "default_icon" : "images/icon-inverted-19px.png",
+    "default_popup" : "popup.html",
+    "default_title" : "Track Yourself!"
+  },
+  "content_security_policy" : "script-src 'self' https://www.gstatic.com/ https://ajax.googleapis.com https://cdnjs.cloudflare.com https://*.firebaseio.com https://www.googleapis.com; object-src 'self'"
+}

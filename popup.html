@@ -1,0 +1,65 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+<head>
+  <title>Health Tracker</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- Vendor Scripts -->
+  <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"
+          integrity="sha256-Gn7MUQono8LUxTfRA0WZzJgTua52Udm1Ifrk5421zkA="
+          crossorigin="anonymous">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+  <!-- Vendor Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+  <!-- App Stylesheets -->
+  <link rel="stylesheet" href="styles/popup.css">
+
+  <!-- App Scripts-->
+  <script type="text/javascript" src="js/firebase_setup.js"></script>
+  <script src="js/popup.js"></script>
+</head>
+<body>
+<div id="app" class="container">
+  <!-- Plus Button-->
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center change-button">
+        <span class="glyphicon glyphicon-plus-sign" id="plus-button" aria-hidden="true"></span>
+      </h1>
+    </div>
+  </div>
+
+  <!-- Calories List-->
+  <div class="row">
+    <div class="col-xs-12">
+      <h6 class="text-center">
+        <em>Today's Calories</em>
+      </h6>
+      <h2 class="text-center" id="current-calorie-count"></h2>
+    </div>
+  </div>
+
+  <!-- Minus Button-->
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center change-button">
+        <span class="glyphicon glyphicon-minus-sign" id="minus-button" aria-hidden="true"></span>
+      </h1>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+
