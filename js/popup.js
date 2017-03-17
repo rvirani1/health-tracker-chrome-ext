@@ -1,6 +1,5 @@
 $(function () {
-  // Functions
-
+  // ------------ Start Utility Functions -------------
   function firebaseRef () {
     return window.firebase_database.ref('/calories');
   }
@@ -28,7 +27,7 @@ $(function () {
   function addCaloriesOnFirebase() {
     currentDateRef().once('value').then(function(data) {
       var previousCalories = data.val();
-      var newCalories = previousCalories + 15;
+      var newCalories = previousCalories + 25;
       updateCaloriesOnFirebase(newCalories)
     });
   }
@@ -36,12 +35,13 @@ $(function () {
   function subtractCaloriesOnFirebase() {
     currentDateRef().once('value').then(function(data) {
       var previousCalories = data.val();
-      var newCalories = Math.max(0, previousCalories - 15);
+      var newCalories = Math.max(0, previousCalories - 25);
       updateCaloriesOnFirebase(newCalories)
     });
   }
+  // ------------ Finish Utility Functions -------------
 
-  // Getting to Business
+  // ------------ Start Getting to Business -------------
   firebaseRef()
     .orderByKey()
     .limitToLast(1)
@@ -49,4 +49,5 @@ $(function () {
 
   $('#plus-button').click(addCaloriesOnFirebase);
   $('#minus-button').click(subtractCaloriesOnFirebase);
+  // ------------ Finish Getting to Business -------------
 });
